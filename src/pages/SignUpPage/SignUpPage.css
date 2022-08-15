@@ -1,0 +1,8 @@
+.bgImage {
+    min-height: 93vh;
+    display: flex;
+    align-items: center;
+    background-image: url("../../Images/bgImg1.png");
+    background-position: center;
+    background-size: cover;
+}
