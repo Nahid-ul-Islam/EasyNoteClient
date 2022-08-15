@@ -7,7 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Header = () => {
     const [user] = useAuthState(auth);
-    console.log("user",user);
+    // console.log("user",user);
     return (
         <div className='bg-orange-400'>
             {

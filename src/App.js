@@ -9,6 +9,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import Login from './pages/LoginPage/Login';
 import MyNotes from './pages/MyNotes/MyNotes';
 import SignUp from './pages/SignUpPage/SignUp';
+import UpdateNote from './pages/UpdateNote/UpdateNote';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path='/signup' element={<SignUp />}></Route>
           <Route path='/mynotes' element={user? <MyNotes /> : <LandingPage />}></Route>
           <Route path='/add-note' element={<AddNote />}></Route>
+          <Route path='/update-note/:id' element={<UpdateNote />}></Route>
         </Routes>
       </main>
       <Footer />
