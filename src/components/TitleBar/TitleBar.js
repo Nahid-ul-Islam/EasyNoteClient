@@ -8,8 +8,8 @@ const TitleBar = ({ title, children }) => {
                 {
                     title &&
                     <>
-                        <h1 className='text-2xl mx-2 md:text-4xl md:mx-5 lg:text-5xl   heading'>{title}</h1>
-                        <hr />
+                        <h1 className='text-2xl mx-2 md:text-4xl md:mx-5 lg:text-5xl text-black heading'>{title}</h1>
+                        <div className='bg-gray-300 h-[1px] mt-2'></div>
                     </>
                 }
                 <div className='mx-2 md:mx-5'>

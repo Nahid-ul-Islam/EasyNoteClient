@@ -6,7 +6,8 @@ import Loading from '../../components/Loading/Loading';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { updateNote } from '../../app/features/notes/notesSlice';
+import { loadNotes, updateNote } from '../../app/features/notes/notesSlice';
+import axios from 'axios';
 
 const UpdateNote = () => {
     const {id} = useParams();
@@ -26,16 +27,16 @@ const UpdateNote = () => {
     const [updatedTitle, setUpdatedTitle] = useState(note.title);
     const [updatedContent, setUpdatedContent] = useState(note.content);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        const data = {
-            id: id,
+        const updateDoc = {
             email: user.email, 
             title: updatedTitle, 
             content: updatedContent, 
             date: updatedDate
         };
-        dispatch(updateNote(data));
+        await axios.put(`https://afternoon-oasis-49033.herokuapp.com/my-notes/${id}`, updateDoc);
+        dispatch(loadNotes(updateDoc.email));
         navigate('/mynotes');
     };
 
@@ -57,7 +58,7 @@ const UpdateNote = () => {
                             </div>
                         </div>
                         <div className="w-full flex flex-wrap px-3 mb-2">
-                            <button className='w-full rounded-md py-2 bg-green-500 hover:bg-green-700' type="submit">Save</button>
+                            <button className='w-full rounded-md py-2 text-white bg-green-500 hover:bg-green-700' type="submit">Save</button>
                         </div>
                     </form>
                 </div>

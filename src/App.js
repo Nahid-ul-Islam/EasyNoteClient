@@ -1,7 +1,6 @@
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import auth from './firebase.init';
 import AddNote from './pages/AddNote/AddNote';
@@ -15,7 +14,7 @@ import UpdateNote from './pages/UpdateNote/UpdateNote';
 function App() {
   const [user] = useAuthState(auth);
   return (
-    <>
+    <div className='bg-white'>
       <Header />
       <main>
         <Routes>
@@ -27,8 +26,7 @@ function App() {
           <Route path='/update-note/:id' element={<UpdateNote />}></Route>
         </Routes>
       </main>
-      <Footer />
-    </>
+    </div>
   );
 }
 
