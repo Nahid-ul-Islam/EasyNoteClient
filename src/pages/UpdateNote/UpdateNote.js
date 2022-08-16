@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import TitleBar from '../../components/TitleBar/TitleBar';
 import Loading from '../../components/Loading/Loading';
@@ -12,6 +12,7 @@ const UpdateNote = () => {
     const {id} = useParams();
     const [user] = useAuthState(auth);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const notesData = useSelector((state) => state.notesReducer);
     const { isLoading, notes, error } = notesData;
     const note = notes.find((note) => note._id === id);
@@ -35,6 +36,7 @@ const UpdateNote = () => {
             date: updatedDate
         };
         dispatch(updateNote(data));
+        navigate('/mynotes');
     };
 
     return (

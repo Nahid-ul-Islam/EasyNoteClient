@@ -4,33 +4,32 @@ import axios from "axios";
 
 //fetch notes
 export const loadNotes = createAsyncThunk("notes/loadNotes", async (email) => {
-    const res = await axios.get(`http://localhost:5000/my-notes?email=${email}`);
+    const res = await axios.get(`https://afternoon-oasis-49033.herokuapp.com/my-notes?email=${email}`);
     return res.data;
 });
 
 //add notes
 export const addNote = createAsyncThunk("notes/addNote", async (data) => {
-    const res = await axios.post('http://localhost:5000/my-notes', data);
+    const res = await axios.post('https://afternoon-oasis-49033.herokuapp.com/my-notes', data);
     // console.log('res from add note', res);
     return res.data;
 });
 
 //update note
-export const updateNote = createAsyncThunk("notes/updateNote", async(data) => {
+export const updateNote = createAsyncThunk("notes/updateNote", async (data) => {
     const updateNote = {
         email: data.email,
-        title: data.title, 
+        title: data.title,
         content: data.content,
         date: data.date
-     }
-    const res = await axios.put(`http://localhost:5000/my-notes/${data.id}`, updateNote);
+    }
+    const res = await axios.put(`https://afternoon-oasis-49033.herokuapp.com/my-notes/${data.id}`, updateNote);
     return res.data;
 });
 
 //delete note
 export const delNote = createAsyncThunk("notes/delNote", async (id) => {
-    const res = await axios.delete(`http://localhost:5000/my-notes/${id}`);
-    // console.log('res from delete note', res);
+    const res = await axios.delete(`https://afternoon-oasis-49033.herokuapp.com/my-notes/${id}`);
     return res.data;
 })
 

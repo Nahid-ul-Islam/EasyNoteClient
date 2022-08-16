@@ -28,7 +28,7 @@ const AddNote = () => {
         navigate('/mynotes');
     }
     return (
-        <TitleBar title="Create Your Note here">
+        <TitleBar title="Create Your Note Here">
             <div className=' flex justify-center'>
                 <form onSubmit={handleSubmit} className="w-full border border-orange-500 mt-10 rounded">
                     <div className="flex flex-wrap mb-6 mt-8">

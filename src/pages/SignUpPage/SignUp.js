@@ -28,11 +28,12 @@ const SignUp = () => {
         console.log(email, password);
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });  
-    }
-
-    if(user) {
         navigate('/mynotes');
     }
+
+    // if(user) {
+    //     navigate('/mynotes');
+    // }
 
     if(loading || updating) {
         return <Loading></Loading>
