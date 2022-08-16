@@ -42,7 +42,7 @@ const MyNotes = () => {
                     notes && notes.filter((searchNote) => {
                         if (searchNote === "") {
                             return searchNote
-                        } else if (searchNote.title.toLowerCase().includes(searchData)) {
+                        } else if (searchNote.title.toLowerCase().includes(searchData.toLowerCase())) {
                             return searchNote
                         }
                     }).map(note =>
