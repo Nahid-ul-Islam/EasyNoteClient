@@ -6,7 +6,7 @@ import Loading from '../../components/Loading/Loading';
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { loadNotes, updateNote } from '../../app/features/notes/notesSlice';
+import { loadNotes } from '../../app/features/notes/notesSlice';
 import axios from 'axios';
 
 const UpdateNote = () => {

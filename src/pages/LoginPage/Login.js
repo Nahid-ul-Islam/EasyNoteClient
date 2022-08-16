@@ -71,17 +71,17 @@ const Login = () => {
                                 <input className="shadow appearance-none border border-orange-600 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" name='password' type="password" placeholder="******************" required />
                             </div>
                             <div className="flex items-center justify-between">
-                                <button className="bg-green-800 w-full hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                                <button className="bg-green-800 hover:bg-green-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                                     <input className='w-full' type="submit" value='Sign In' />
                                 </button>
                             </div>
                             <div className='flex justify-between mt-5'>
                                 <button onClick={forgetPassword}
-                                    className="inline-block align-baseline font-bold  text-blue-800 hover:text-blue-900">
+                                    className="inline-block align-baseline font-bold  text-white hover:text-gray-300">
                                     Forgot Password?
                                 </button>
-                                <p>Don't have an account?</p>
-                                <Link to='/signup' className="inline-block align-baseline font-bold text-blue-800 hover:text-blue-900">
+                                <p className='text-white'>Don't have an account?</p>
+                                <Link to='/signup' className="inline-block align-baseline font-bold text-white hover:text-gray-300">
                                     Register
                                 </Link>
                             </div>

@@ -1,5 +1,5 @@
 .bgImage {
-    min-height: 93vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     background-image: url("../../Images/bgImg1.png");

@@ -9,6 +9,7 @@ import TitleBar from '../../components/TitleBar/TitleBar';
 import auth from '../../firebase.init';
 
 const AddNote = () => {
+
     const [user] = useAuthState(auth);
     const dispatch = useDispatch();
     const navigate = useNavigate();

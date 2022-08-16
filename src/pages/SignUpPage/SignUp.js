@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './SignUpPage.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
@@ -17,8 +17,6 @@ const SignUp = () => {
     const [updateProfile, updating] = useUpdateProfile(auth);
 
     let errorElement;
-    
-
 
     const handleSubmit = async(event) => {
         event.preventDefault();
@@ -31,9 +29,6 @@ const SignUp = () => {
         navigate('/mynotes');
     }
 
-    // if(user) {
-    //     navigate('/mynotes');
-    // }
 
     if(loading || updating) {
         return <Loading></Loading>
@@ -75,7 +70,7 @@ const SignUp = () => {
                                 </button>
                             </div>
                             <div className='flex justify-center mt-5'>
-                                <Link to='/signin' className="inline-block align-baseline font-bold text-blue-800 hover:text-blue-900">
+                                <Link to='/signin' className="inline-block align-baseline font-bold text-white hover:text-gray-300">
                                     Already have an Account
                                 </Link>
                             </div>
