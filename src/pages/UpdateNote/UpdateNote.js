@@ -10,7 +10,7 @@ import { loadNotes } from '../../app/features/notes/notesSlice';
 import axios from 'axios';
 
 const UpdateNote = () => {
-    const {id} = useParams();
+    const { id } = useParams();
     const [user] = useAuthState(auth);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ const UpdateNote = () => {
     const note = notes.find((note) => note._id === id);
 
     const newDate = new Date();
-    const date = newDate.getDate(); 
+    const date = newDate.getDate();
     const month = newDate.getMonth() + 1;
     const year = newDate.getFullYear();
     const updatedDate = date + '/' + month + '/' + year;
@@ -27,15 +27,15 @@ const UpdateNote = () => {
     const [updatedTitle, setUpdatedTitle] = useState(note.title);
     const [updatedContent, setUpdatedContent] = useState(note.content);
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const updateDoc = {
-            email: user.email, 
-            title: updatedTitle, 
-            content: updatedContent, 
+            email: user.email,
+            title: updatedTitle,
+            content: updatedContent,
             date: updatedDate
         };
-        await axios.put(`https://afternoon-oasis-49033.herokuapp.com/my-notes/${id}`, updateDoc);
+        await axios.put(`https://easy-note-1ros.onrender.com/my-notes/${id}`, updateDoc);
         dispatch(loadNotes(updateDoc.email));
         navigate('/mynotes');
     };
@@ -46,10 +46,10 @@ const UpdateNote = () => {
             {error && <p className='text-red-500'>{Error}</p>}
             {notes &&
                 <div className=' flex justify-center'>
-                    <form onSubmit={handleSubmit}  className="w-full border border-orange-500 mt-10 rounded">
+                    <form onSubmit={handleSubmit} className="w-full border border-orange-500 mt-10 rounded">
                         <div className="flex flex-wrap mb-6 mt-8">
                             <div className="w-full px-3 mb-6 md:mb-0">
-                                <input onChange={e => setUpdatedTitle(e.target.value)} className="appearance-none block w-full bg-gray-200 text-black border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-green-500" id="grid-first-name" type="text" name="title" value={updatedTitle}  required />
+                                <input onChange={e => setUpdatedTitle(e.target.value)} className="appearance-none block w-full bg-gray-200 text-black border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-green-500" id="grid-first-name" type="text" name="title" value={updatedTitle} required />
                             </div>
                         </div>
                         <div className="flex flex-wrap mb-6">

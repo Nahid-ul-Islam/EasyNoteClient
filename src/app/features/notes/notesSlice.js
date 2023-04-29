@@ -4,13 +4,13 @@ import axios from "axios";
 
 //fetch notes
 export const loadNotes = createAsyncThunk("notes/loadNotes", async (email) => {
-    const res = await axios.get(`https://afternoon-oasis-49033.herokuapp.com/my-notes?email=${email}`);
+    const res = await axios.get(`https://easy-note-1ros.onrender.com/my-notes?email=${email}`);
     return res.data;
 });
 
 //add notes
 // export const addNote = createAsyncThunk("notes/addNote", async (data) => {
-//     const res = await axios.post('https://afternoon-oasis-49033.herokuapp.com/my-notes', data);
+//     const res = await axios.post('https://easy-note-1ros.onrender.com/my-notes', data);
 //     return res.data;
 // });
 
@@ -22,13 +22,13 @@ export const loadNotes = createAsyncThunk("notes/loadNotes", async (email) => {
 //         content: data.content,
 //         date: data.date
 //     }
-//     const res = await axios.put(`https://afternoon-oasis-49033.herokuapp.com/my-notes/${data.id}`, updateNote);
+//     const res = await axios.put(`https://easy-note-1ros.onrender.com/my-notes/${data.id}`, updateNote);
 //     return res.data;
 // });
 
 //delete note
 // export const delNote = createAsyncThunk("notes/delNote", async (id, email) => {
-//     let res = await axios.delete(`https://afternoon-oasis-49033.herokuapp.com/my-notes/${id}`);
+//     let res = await axios.delete(`https://easy-note-1ros.onrender.com/my-notes/${id}`);
 //     return res.data;
 // });
 

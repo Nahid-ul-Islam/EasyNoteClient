@@ -27,7 +27,7 @@ const AddNote = () => {
         const content = event.target.note.value;
         const date = noteDate;
         const data = { email, title, content, date };
-        await axios.post('https://afternoon-oasis-49033.herokuapp.com/my-notes', data);
+        await axios.post('https://easy-note-1ros.onrender.com/my-notes', data);
         dispatch(loadNotes(email));
         navigate('/mynotes');
     }

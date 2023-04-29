@@ -19,7 +19,7 @@ const MyNotes = () => {
 
     const handleDelete = async (id, email) => {
         if (window.confirm("Are you sure you want to delete!!")) {
-            await axios.delete(`https://afternoon-oasis-49033.herokuapp.com/my-notes/${id}`);
+            await axios.delete(`https://easy-note-1ros.onrender.com/my-notes/${id}`);
             dispatch(loadNotes(user.email));
         }
     };
